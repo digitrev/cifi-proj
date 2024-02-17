@@ -21,6 +21,12 @@ const sections = [
         style: { width: 80 },
       },
       { id: 'engineering', type: 'checkbox', label: 'Engineering Badge' },
+      {
+        id: 'meltdown',
+        type: 'number',
+        label: 'Meltdown Effect',
+        style: {width: 80}
+      }
     ],
   },
   {
@@ -288,8 +294,7 @@ const sections = [
         label: '(11) The Lahnarian Fleet Carrier'
       }
     ]
-  },
-
+  }
 ]
 
 academyEffectorPortal.pages.default.dataLinkage = {
@@ -370,6 +375,9 @@ academyEffectorPortal.pages.default.dataLinkage = {
   set engineering(value) {
     playerData.academy.badges.engineering = value
   },
+  set meltdown(value) {
+    playerData.meltdown = value
+  },
 
   get crew() {
     return playerData.fleet.zeus.crew
@@ -391,6 +399,9 @@ academyEffectorPortal.pages.default.dataLinkage = {
   },
   get engineering() {
     return playerData.academy.badges.engineering
+  },
+  get meltdown() {
+    return playerData.meltdown
   },
 
   set wonderous(value) {
@@ -692,7 +703,12 @@ academyEffectorPortal.pages.default.updateFunction = function (e) {
   }
 
   if (e.target.type === 'number') {
-    portalPanel.dataLinkage[e.target.id] = parseInt(e.target.value)
+    if (e.target.id === 'meltdown') {
+      portalPanel.dataLinkage[e.target.id] = parseFloat(e.target.value)
+    }
+    else {
+      portalPanel.dataLinkage[e.target.id] = parseInt(e.target.value)
+    }
     SavePlayerData()
 
     if (e.target.id === 'rank') {
