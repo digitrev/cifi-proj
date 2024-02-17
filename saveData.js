@@ -235,7 +235,6 @@ const blankPlayer = {
   },
   relics: {
     glider: 0,
-    carrier: 0
   },
   meltdown: 0.0
 }
