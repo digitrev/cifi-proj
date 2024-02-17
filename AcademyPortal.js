@@ -276,6 +276,10 @@ function GetStaticMatBonus() {
     0.002 * playerData.loopMods.productivity + 1,
     playerData.level,
   )
+  if (playerData.meltdown !== 0){
+    staticMatBonus *= playerData.meltdown
+    staticMatBonus /= 14.5 //this is almost certainly wrong, but it fits my data pretty well
+  }
 
   return staticMatBonus
 }
