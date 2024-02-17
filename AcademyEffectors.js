@@ -24,7 +24,7 @@ const sections = [
       {
         id: 'meltdown',
         type: 'number',
-        label: 'Meltdown Effect',
+        label: '<label class="has-tip" data-bs-toggle="tooltip" data-bs-title="No Ouro = this should be 0">Meltdown Effect</label>',
         style: {width: 80}
       }
     ],
