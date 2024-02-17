@@ -233,6 +233,10 @@ const blankPlayer = {
     },
     iapCollector: false,
   },
+  relics: {
+    glider: 0,
+    carrier: 0
+  }
 }
 
 const LSKey = 'CifiProjSave'

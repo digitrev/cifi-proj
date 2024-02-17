@@ -274,6 +274,22 @@ const sections = [
       return i
     }),
   },
+  {
+    name: 'Relics', 
+    children: [
+      {
+        id: 'glider',
+        type: 'number',
+        label: '(3) The Time-Glider Engine'
+      },
+      {
+        id: 'carrier',
+        type: 'number',
+        label: '(11) The Lahnarian Fleet Carrier'
+      }
+    ]
+  },
+
 ]
 
 academyEffectorPortal.pages.default.dataLinkage = {
@@ -468,6 +484,22 @@ academyEffectorPortal.pages.default.dataLinkage = {
   get iapCollector() {
     return playerData.diamonds.iapCollector
   },
+
+  set glider(value) {
+    playerData.relics.glider = value
+  },
+  set carrier(value) {
+    playerData.relics.carrier = value
+  },
+
+  get glider() {
+    return playerData.relics.glider
+  },
+  get carrier() {
+    return playerData.relics.carrier
+  },
+
+
 }
 
 academyEffectorPortal.pages.default.initFunction = function (panel) {
