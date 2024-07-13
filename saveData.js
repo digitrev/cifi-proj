@@ -5,7 +5,7 @@ PLAYER DATA CHANGE LOG
 */
 
 const blankPlayer = {
-  version: 13,
+  version: 14,
   activePortal: 'academyEffector',
   colorProfile: {
     academyProjects: ['#444444', '#CCCC44', '#44CC44', '#4444CC'],
@@ -329,6 +329,11 @@ function fixPlayerData() {
 
   if (!playerData.fleet.ouro) {
     playerData.fleet.ouro = blankPlayer.fleet.ouro
+  }
+
+  if (playerData.academy.farms.length < 4)
+  {
+    playerData.academy.farms.push(blankPlayer.academy.farms[3])
   }
 
   if (playerData.version < blankPlayer.version) {
